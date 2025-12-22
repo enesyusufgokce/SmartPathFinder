@@ -1,10 +1,12 @@
 SETUP INSTRUCTIONS
 
 1)	Download or Clone the Project
+   
 Option A – Download ZIP:
 1.	Go to	https://github.com/enesyusufgokce/SmartPathFinder
 2.	Click the green "Code" button → choose "Download ZIP".
 3.	Extract the ZIP file to a folder on your computer.
+   
 Option B – Clone with Git:
 If you have Git installed, run this command in your terminal: git clone https://github.com/enesyusufgokce/SmartPathFinder.git
 
