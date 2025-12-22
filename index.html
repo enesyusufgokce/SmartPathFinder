@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menteşe Multi-Stop Navigator</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="sidebar">
+        <h2>Menteşe Navigator</h2>
+        <p id="info">Click on the map to add as many stops as you want.</p>
+        <button onclick="calculateFullRoute()">Generate Final Path</button>
+        <div id="result"></div>
+        <button onclick="resetMap()" id="clear-btn">Clear All</button>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="dijkstra.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
