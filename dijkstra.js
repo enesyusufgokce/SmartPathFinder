@@ -3,16 +3,14 @@ function findShortestPath(graphData, startNode, endNode) {
     const previous = {};
     const remainingNodes = new Set();
 
-
 for (let i = 0; i < graphData.nodes.length; i++) {
     const node = graphData.nodes[i];
     distances[node] = Infinity;
     previous[node] = null;
     remainingNodes.add(node);
 }
-
     distances[startNode] = 0;
-
+    
     while (remainingNodes.size > 0) {
         let closest = null;
         let minDist = Infinity;
@@ -23,17 +21,13 @@ for (let i = 0; i < graphData.nodes.length; i++) {
                 closest = node;
             }
         }
-
         if (closest === null || distances[closest] === Infinity) {
             break;
         }
-
         if (closest === endNode) {
             break;
         }
-
         remainingNodes.delete(closest);
-
         const neighbors = graphData.edges[closest] || [];
 
         for (let edge of neighbors) {
@@ -48,11 +42,9 @@ for (let i = 0; i < graphData.nodes.length; i++) {
             }
         }
     }
-
     if (distances[endNode] === Infinity) {
         return { path: [], distance: Infinity };
     }
-
     const path = [];
     let current = endNode;
 
@@ -60,7 +52,5 @@ for (let i = 0; i < graphData.nodes.length; i++) {
         path.unshift(current);
         current = previous[current];
     }
-    
-    return { path: path[0] === startNode ? path : [], distance: distances[endNode]
-    };
+    return { path: path[0] === startNode ? path : [], distance: distances[endNode]};
 }
